@@ -1,0 +1,32 @@
+{{ define "register" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/template.css"/>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register New Account</h2>
+    <ul>
+        <li>usernames must contain only letters or numbers</li>
+        <li>password must be longer than 8 characters but shorter than 72</li>
+        <li>passwords must be of significant complexity</li>
+    </ul>
+    <div class="q">
+        <form action="/save_user" method="POST">
+    <br>
+        <label for="username">UserName:</label>
+        <input class="input" type="text" id="username" name="username">
+    <br>
+        <label for="password">Password:</label>
+        <input class="input" type="password" id="password" name="password">
+    <br>
+        <input class="input but" type="submit" value="Submit">
+        </form> 
+    </div>
+</body>
+</html>
+{{ end }}

@@ -1,0 +1,39 @@
+{{ define "books" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/template.css"/>
+    <title>Books</title>
+</head>
+<body>
+    <!--<h2>you're logged successfully</h2>-->
+    <h2>Books:</h2>
+    <form action="/search" method="POST" class="search">
+        <input class="input" type="text" id="search" name="search" placeholder="Search by Title">
+        <input class="input but" type="submit" value="Search">
+    </form>
+    <form action="/sort" method="POST" class="sort">
+        <input class="sort but" type="submit" value="Sort by name" id="sort">
+    </form>
+    <div class="bookcon">
+        {{ range . }}
+        <div class="con">
+            <!--<h2>pride</h2>
+            <p>1998 ostin</p>-->
+            <p style="font-size: 16px"><h2 style="margin-bottom: 0%; padding-bottom: 0%;">{{.Title}}</h2></br>Author: {{ .Author}}</br>Year: {{ .Year }}</p>
+        </div>
+        <!--<div class="con">
+            <h2>pride</h2>
+            <p>1998 ostin</p>
+        </div>-->
+        {{ else }}
+        <p>Books not found</p>
+        {{ end }}
+        </br><a href="/addbook" class="addbook">Add Book</a>
+    </div>
+</body>
+</html>
+{{ end }}

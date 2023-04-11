@@ -1,0 +1,27 @@
+{{ define "login" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/template.css"/>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <div class="q">
+        <form action="/check_login" method="POST">
+    <br>
+        <label for="username">UserName:</label>
+        <input class="input" type="text" id="username" name="username">
+    <br>
+        <label for="password">Password:</label>
+        <input class="input" type="password" id="password" name="password">
+    <br>
+        <input class="input but" type="submit" value="Submit">
+        </form> 
+    </div>
+</body>
+</html>
+{{ end }}
